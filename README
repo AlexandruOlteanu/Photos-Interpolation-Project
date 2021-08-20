@@ -1,8 +1,6 @@
 Copyright Alexandru Olteanu, grupa 312CA    <alexandruolteanu71@gmail.com>
 
 
-						README
-
 	Nearest Neighbours Interpolation
 
   To find out the color of a pixel I calculated the distance by each desired pixel and I have them
