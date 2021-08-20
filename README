@@ -3,37 +3,33 @@ Copyright Alexandru Olteanu, grupa 312CA    <alexandruolteanu71@gmail.com>
 
 						README
 
-	Cerinta 1 : Nearest Neighbours
+	Nearest Neighbours Interpolation
 
-  Pentru a afla culoarea unui pixel am calculat distanta de catre fiecare pixel dorit si i-am
-atribuit valoarea pixelului ce se afla la cea mai mica distanta (Punctele aflate la granita au
-primit valorile corespunzatoare incat sa fie corect comform testelor).
-  La resize, am facut putin diferit in idee ca am calculat s_x si s_y cu n-1, m-1, p-1, q-1.
-Cu toate acestea, am urmat aceleasi reguli de resize si am atribuit fiecarui pixel valoarea 
-corecta. Pentru Resize-ul unei imagini RGB, am impartit problema in 3 sub-probleme si m-am
-folosit astfel de resize pentru o imagine alb-negru de 3 ori.
+  To find out the color of a pixel I calculated the distance by each desired pixel and I have them
+assigned the value of the pixel at the shortest distance (The points at the boundary have
+received the appropriate values to be correctly according to the tests).
+  At resize, I did a little differently in the idea that I calculated s_x and s_y with n-1, m-1, p-1, q-1.
+However, we followed the same resize rules and assigned the value to each pixel
+correct. For resizing an RGB image, I divided the problem into 3 sub-problems and I did
+used such resize for a black and white image 3 times.
 
-	Cerinta 2: Bilinear
+	Bilinear Interpolation
   
-  Am urmat formulele si transformarile din cerinta si cu cateva mici modificari am atribuit 
-valorile in mod corect pixelilor.
-  Pentru resize am folosit exact acelasi rationament ca la cerinta 1 si m-am folosit si de functia
-surrounding_points pentru a lua in mod corect punctele inconjuratoare din matricea initiala, 
-avand grja sa evitam potentiala calculare a inversei unei matrici cu determinantul 0 (Imposibil 
-atunci cand x1 = x2 || y1 == y1). In rest, m-am folosit de formule pentru a calcula valoarea in 
-fiecare nou pixel.
-  Pentru rotire, am urmat pasii din cerinta cu transformari si inverse (Am avut grija la cazul 
-cand pixelul initial corespunzator era in afara matricei, asignand valoarea cu 0) si asa am rezolvat
-cerinta.
+  For resize I used exactly the same reasoning as in requirement 1 and I also used the function
+surrounding_points to correctly take the surrounding points from the initial matrix,
+taking care to avoid the potential calculation of the inverse of a matrix with determinant 0 (Impossible
+when x1 = x2 || y1 == y1). Otherwise, I used formulas to calculate the value in
+each new pixel.
+  For rotation, I followed the steps in the requirement with transformations and inverses (I took care of the case
+when the corresponding initial pixel was out of the matrix, assigning the value with 0) and so we solved
+requirement.
   
-	Cerinta 3: Bicubic
+  
+	Bicubic Interpolation
 
-   La fel ca la cerintele precedente am urmat pasii din cerinta insa a fost putin mai bug-uit 
-deoarece de exemplu f(0,1) din cerinta reprezenta nu f(x1, y2) ci f(y2, x1) (Am analizat dupa
-si am realizat ca e deoarece era o functie si coordonatele se luau invers). Oricum, cerinta
-a fost rezolvata in aceeasi maniera si am asignat fiecarui pixel valoarea dorita.
-   Am incercat sa ma folosesc de toate functiile din skel incat codul sa fie cat mai lizibil si
-logic! 
-
-   P.S: Sper ca este totul in regula cu explicatiile + ca erau TODO-uri peste tot in cod care
-explica de la sine fiecare pas pe care l-am urmat (mai mult sau mai putin pe cei din cerinta).  
+   As with the previous requirements, I followed the steps in the requirement, but it was a bit more bug-forgotten
+because for example f (0,1) in the requirement represents not f (x1, y2) but f (y2, x1) (We analyzed after
+and I realized it was because it was a function and the coordinates were reversed). Anyway, the requirement
+it was solved in the same way and we assigned each pixel the desired value.
+   I tried to use all the functions in the skel so that the code is as readable as possible
+logical! 
