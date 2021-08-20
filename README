@@ -1,0 +1,39 @@
+Copyright Alexandru Olteanu, grupa 312CA    <alexandruolteanu71@gmail.com>
+
+
+						README
+
+	Cerinta 1 : Nearest Neighbours
+
+  Pentru a afla culoarea unui pixel am calculat distanta de catre fiecare pixel dorit si i-am
+atribuit valoarea pixelului ce se afla la cea mai mica distanta (Punctele aflate la granita au
+primit valorile corespunzatoare incat sa fie corect comform testelor).
+  La resize, am facut putin diferit in idee ca am calculat s_x si s_y cu n-1, m-1, p-1, q-1.
+Cu toate acestea, am urmat aceleasi reguli de resize si am atribuit fiecarui pixel valoarea 
+corecta. Pentru Resize-ul unei imagini RGB, am impartit problema in 3 sub-probleme si m-am
+folosit astfel de resize pentru o imagine alb-negru de 3 ori.
+
+	Cerinta 2: Bilinear
+  
+  Am urmat formulele si transformarile din cerinta si cu cateva mici modificari am atribuit 
+valorile in mod corect pixelilor.
+  Pentru resize am folosit exact acelasi rationament ca la cerinta 1 si m-am folosit si de functia
+surrounding_points pentru a lua in mod corect punctele inconjuratoare din matricea initiala, 
+avand grja sa evitam potentiala calculare a inversei unei matrici cu determinantul 0 (Imposibil 
+atunci cand x1 = x2 || y1 == y1). In rest, m-am folosit de formule pentru a calcula valoarea in 
+fiecare nou pixel.
+  Pentru rotire, am urmat pasii din cerinta cu transformari si inverse (Am avut grija la cazul 
+cand pixelul initial corespunzator era in afara matricei, asignand valoarea cu 0) si asa am rezolvat
+cerinta.
+  
+	Cerinta 3: Bicubic
+
+   La fel ca la cerintele precedente am urmat pasii din cerinta insa a fost putin mai bug-uit 
+deoarece de exemplu f(0,1) din cerinta reprezenta nu f(x1, y2) ci f(y2, x1) (Am analizat dupa
+si am realizat ca e deoarece era o functie si coordonatele se luau invers). Oricum, cerinta
+a fost rezolvata in aceeasi maniera si am asignat fiecarui pixel valoarea dorita.
+   Am incercat sa ma folosesc de toate functiile din skel incat codul sa fie cat mai lizibil si
+logic! 
+
+   P.S: Sper ca este totul in regula cu explicatiile + ca erau TODO-uri peste tot in cod care
+explica de la sine fiecare pas pe care l-am urmat (mai mult sau mai putin pe cei din cerinta).  
